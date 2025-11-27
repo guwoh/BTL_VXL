@@ -1,0 +1,15 @@
+idf.py set-target esp32s3
+
+cd my_project
+idf.py build
+idf.py flash
+idf.py monitor
+
+
+idf.py flash monitor
+
+idf.py -p /dev/ttyUSB0 flash monitor
+
+idf.py -p /dev/ttyUSB0 flash
+
+idf.py create-project name_project

@@ -1,7 +1,7 @@
 {
     "version":            "1.2",
     "project_name":       "mpu_svm",
-    "project_version":    "2685e7e",
+    "project_version":    "faffef0-dirty",
     "project_path":       "/home/guwoh/Documents/BTL_VXL/SoftWare/mpu_svm",
     "idf_path":           "/home/guwoh/esp/esp-idf",
     "build_dir":          "/home/guwoh/Documents/BTL_VXL/SoftWare/mpu_svm/build",

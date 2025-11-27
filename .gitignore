@@ -1,0 +1,33 @@
+# File biên dịch và Linker (Rác)
+*.o
+*.obj
+*.hex
+*.bin
+*.elf
+*.axf
+*.crf
+*.d
+*.map
+*.lst
+*.dep
+*.iex
+
+# Các thư mục sinh ra khi build (Đặc biệt là Keil C và STM32)
+Objects/
+Listings/
+Debug/
+Release/
+RTE/
+MDK-ARM/RTE/
+
+# File cấu hình riêng của IDE (Không nên đẩy lên)
+*.uvoptx
+*.uvguix.*
+*.scvd
+.vscode/
+.idea/
+*.launch
+
+# File hệ thống
+.DS_Store
+Thumbs.db
