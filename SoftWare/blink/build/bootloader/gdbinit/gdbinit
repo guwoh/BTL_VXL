@@ -1,0 +1,2 @@
+source /home/guwoh/Documents/BTL_VXL/SoftWare/blink/build/bootloader/gdbinit/symbols
+source /home/guwoh/Documents/BTL_VXL/SoftWare/blink/build/bootloader/gdbinit/connect

@@ -1,0 +1,13 @@
+# Target labels
+ bootloader
+# Source files and their labels
+/home/guwoh/Documents/BTL_VXL/SoftWare/blink/build/CMakeFiles/bootloader
+/home/guwoh/Documents/BTL_VXL/SoftWare/blink/build/CMakeFiles/bootloader.rule
+/home/guwoh/Documents/BTL_VXL/SoftWare/blink/build/CMakeFiles/bootloader-complete.rule
+/home/guwoh/Documents/BTL_VXL/SoftWare/blink/build/bootloader-prefix/src/bootloader-stamp/bootloader-build.rule
+/home/guwoh/Documents/BTL_VXL/SoftWare/blink/build/bootloader-prefix/src/bootloader-stamp/bootloader-configure.rule
+/home/guwoh/Documents/BTL_VXL/SoftWare/blink/build/bootloader-prefix/src/bootloader-stamp/bootloader-download.rule
+/home/guwoh/Documents/BTL_VXL/SoftWare/blink/build/bootloader-prefix/src/bootloader-stamp/bootloader-install.rule
+/home/guwoh/Documents/BTL_VXL/SoftWare/blink/build/bootloader-prefix/src/bootloader-stamp/bootloader-mkdir.rule
+/home/guwoh/Documents/BTL_VXL/SoftWare/blink/build/bootloader-prefix/src/bootloader-stamp/bootloader-patch.rule
+/home/guwoh/Documents/BTL_VXL/SoftWare/blink/build/bootloader-prefix/src/bootloader-stamp/bootloader-update.rule
