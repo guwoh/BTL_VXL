@@ -1,0 +1,6 @@
+Removed Member From Class: ClassName=Sheet1 Member=R?
+Added Component: Designator=U?(PCBComponent_1)
+Added Pin To Net: NetName=GND Pin=U?-GND
+Added Net: Name=GND
+Added Member To Class: ClassName=Sheet1 Member=Component U? ESP32S3_supermini
+Added Rule: Name=Schematic Supply Nets
