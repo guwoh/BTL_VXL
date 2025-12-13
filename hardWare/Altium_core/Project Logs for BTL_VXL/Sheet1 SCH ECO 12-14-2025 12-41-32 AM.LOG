@@ -1,0 +1,5 @@
+Remove Pin=U3-1 From Net=B-
+Remove Pin=U3-5 From Net=B-
+Remove Pin=U3-6 From Net=SCL
+Remove Pin=U3-7 From Net=SDA
+Remove Pin=U3-8 From Net=4.2V

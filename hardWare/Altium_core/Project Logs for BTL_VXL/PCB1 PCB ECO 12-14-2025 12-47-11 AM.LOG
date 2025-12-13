@@ -1,0 +1,5 @@
+Added Pin To Net: NetName=B- Pin=U?-1
+Added Pin To Net: NetName=B- Pin=U?-5
+Added Pin To Net: NetName=SCL Pin=U?-6
+Added Pin To Net: NetName=SDA Pin=U?-7
+Added Pin To Net: NetName=4.2V Pin=U?-8

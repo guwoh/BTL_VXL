@@ -1,0 +1,47 @@
+Change Component Designator: OldDesignator=P? NewDesignator=P1
+Added Component: Designator=D?(FP-APHD1608LZGCK-MFG)
+Add component (AddParameter): Name = "Case Code (Imperial)"; Value = "0603"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Case Code (Metric)"; Value = "1608"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Case/Package"; Value = "0603"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Color"; Value = "Green"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Dominant Wavelength"; Value = "525nm"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Forward Voltage"; Value = "2.65V"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Height"; Value = "0.75mm"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Length"; Value = "1.6mm"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Lens Color"; Value = "Colorless"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Lens Size"; Value = "0.7mm"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Lens Style"; Value = "Round"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Lens Transparency"; Value = "Clear"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Luminous Intensity"; Value = "180mcd"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Mount"; Value = "Surface Mount"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Packaging"; Value = "Tape and Reel"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Test Current"; Value = "2mA"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Viewing Angle"; Value = "100°"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Width"; Value = "0.8mm"; VariantName = "[No Variations]"
+Added Component: Designator=R3(FP-TFCR0805-IPC_C)
+Added Pin To Net: NetName=NetR1_2 Pin=U1-4
+Added Pin To Net: NetName=4.2V Pin=U1-5V
+Added Net: Name=4.2V
+Added Pin To Net: NetName=B+ Pin=P1-2
+Added Pin To Net: NetName=B+ Pin=R2-2
+Added Net: Name=B+
+Added Pin To Net: NetName=B- Pin=P1-1
+Added Pin To Net: NetName=B- Pin=R1-1
+Added Pin To Net: NetName=B- Pin=U1-GND
+Added Pin To Net: NetName=B- Pin=U2-2
+Added Net: Name=B-
+Added Pin To Net: NetName=INT_MPU Pin=U1-1
+Added Pin To Net: NetName=INT_MPU Pin=U2-8
+Added Net: Name=INT_MPU
+Added Pin To Net: NetName=SCL Pin=U1-9
+Added Pin To Net: NetName=SCL Pin=U2-3
+Added Net: Name=SCL
+Added Pin To Net: NetName=SDA Pin=U1-8
+Added Pin To Net: NetName=SDA Pin=U2-4
+Added Net: Name=SDA
+Added Pin To Net: NetName=VCC Pin=U1-3.3V
+Added Pin To Net: NetName=VCC Pin=U2-1
+Added Net: Name=VCC
+Added Member To Class: ClassName=Sheet1 Member=Component D? APHD1608LZGCK
+Added Member To Class: ClassName=Sheet1 Member=Component R3 1k
+Added Rule: Name=Schematic Supply Nets_1

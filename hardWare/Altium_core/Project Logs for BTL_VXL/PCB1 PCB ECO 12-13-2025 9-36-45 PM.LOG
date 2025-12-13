@@ -1,0 +1,5 @@
+Change Component Designator: OldDesignator=U? NewDesignator=U2
+Added Component: Designator=U1(PCBComponent_1)
+Added Component: Designator=U3(PCBComponent_1)
+Added Member To Class: ClassName=Sheet1 Member=Component U1 ESP32S3_supermini
+Added Member To Class: ClassName=Sheet1 Member=Component U3 MAX30102

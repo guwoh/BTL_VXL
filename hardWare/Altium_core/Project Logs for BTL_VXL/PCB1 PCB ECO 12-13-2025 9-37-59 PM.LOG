@@ -1,0 +1,6 @@
+Added Component: Designator=U1(PCBComponent_1)
+Added Component: Designator=U2(U?)
+Added Component: Designator=U?(PCBComponent_1)
+Added Member To Class: ClassName=Sheet1 Member=Component U1 ESP32S3_supermini
+Added Member To Class: ClassName=Sheet1 Member=Component U2 MPU6050
+Added Member To Class: ClassName=Sheet1 Member=Component U? MAX30102

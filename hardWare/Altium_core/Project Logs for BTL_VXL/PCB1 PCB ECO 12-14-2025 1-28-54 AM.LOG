@@ -1,0 +1,3 @@
+Change Component Designator: OldDesignator= NewDesignator=SW?
+Added Pin To Net: NetName=B+ Pin=Power in-2
+Added Pin To Net: NetName=B+ Pin=SW?-2

@@ -1,0 +1,14 @@
+Removed Pin From Net: NetName=B+ Pin=IN-2
+Removed Pin From Net: NetName=B+ Pin=SW1-2
+Removed Pin From Net: NetName=B+_in Pin=SW1-3
+Change Component Designator: OldDesignator= NewDesignator=U1
+Change Component Designator: OldDesignator= NewDesignator=U2
+Change Component Designator: OldDesignator= NewDesignator=U?
+Change Component Designator: OldDesignator=charge NewDesignator=Power charge
+Change Component Designator: OldDesignator=IN NewDesignator=Power in
+Added Pin To Net: NetName=B+_in Pin=SW1-2
+Added Pin To Net: NetName=NetPower in_2 Pin=Power in-2
+Added Pin To Net: NetName=NetPower in_2 Pin=SW1-1
+Added Net: Name=NetPower in_2
+Added Member To Class: ClassName=Sheet1 Member=Component U1 ESP32S3_supermini
+Added Member To Class: ClassName=Sheet1 Member=Component U? MAX30102
