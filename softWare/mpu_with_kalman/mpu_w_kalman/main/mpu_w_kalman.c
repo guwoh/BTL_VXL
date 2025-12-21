@@ -1,204 +1,257 @@
 #include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
 #include <math.h>
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
 #include "driver/i2c.h"
-#include "esp_log.h"
+#include "driver/gpio.h"
 #include "esp_timer.h"
+#include "esp_log.h"
 
-#define TAG "KALMAN_MONITOR"
+// ============================================================
+// 1. CẤU HÌNH PHẦN CỨNG (CHÂN KẾT NỐI)
+// ============================================================
+#define I2C_SDA_IO      5       // Chân dữ liệu I2C
+#define I2C_SCL_IO      6       // Chân xung nhịp I2C
+#define LED_PIN         8       // Chân đèn LED báo nhịp tim (có thể nối LED ngoài)
+#define MAX30102_ADDR   0x57    // Địa chỉ I2C của cảm biến
 
-// --- CẤU HÌNH I2C ---
-#define I2C_SCL_IO 9
-#define I2C_SDA_IO 8
-#define MPU6050_ADDR 0x68
+// Thời gian báo cáo kết quả (5 giây = 5000 ms)
+#define REPORT_INTERVAL_MS 5000 
 
-// ==========================================
-// 1. KALMAN FILTER CHO GÓC (SENSOR FUSION)
-// Kết hợp Accel (Góc) + Gyro (Tốc độ)
-// ==========================================
-typedef struct {
-    double Q_angle;   // Nhiễu quá trình (Góc)
-    double Q_bias;    // Nhiễu quá trình (Bias)
-    double R_measure; // Nhiễu đo lường (Accel)
-    double angle;     // OUTPUT: Góc sau lọc
-    double bias;      // Bias ước lượng
-    double P[2][2];   // Ma trận lỗi
-} Kalman_t;
+// ============================================================
+// 2. CÁC THANH GHI CỦA MAX30102 (KHÔNG CẦN SỬA)
+// ============================================================
+#define REG_FIFO_WR_PTR   0x04
+#define REG_FIFO_OVF_CNT  0x05
+#define REG_FIFO_RD_PTR   0x06
+#define REG_FIFO_DATA     0x07
+#define REG_FIFO_CONFIG   0x08
+#define REG_MODE_CONFIG   0x09
+#define REG_SPO2_CONFIG   0x0A
+#define REG_LED1_PA       0x0C
+#define REG_LED2_PA       0x0D
 
-void Kalman_Init(Kalman_t *kalman) {
-    kalman->Q_angle = 0.001;
-    kalman->Q_bias = 0.003;
-    kalman->R_measure = 0.03; // Tăng lên nếu muốn mượt hơn
-    kalman->angle = 0.0;
-    kalman->bias = 0.0;
-    kalman->P[0][0] = 0.0; kalman->P[0][1] = 0.0;
-    kalman->P[1][0] = 0.0; kalman->P[1][1] = 0.0;
-}
+// ============================================================
+// 3. BIẾN TOÀN CỤC (LƯU TRỮ KẾT QUẢ)
+// ============================================================
+double last_beat_time = 0; // Thời điểm nhịp tim trước đó
+float current_bpm = 0;     // Nhịp tim hiện tại
+float current_spo2 = 0;    // Nồng độ oxy hiện tại
+int finger_detected = 0;   // Cờ báo có ngón tay hay không (1=Có, 0=Không)
 
-double Kalman_GetAngle(Kalman_t *kalman, double newAngle, double newRate, double dt) {
-    // 1. Dự đoán
-    double rate = newRate - kalman->bias;
-    kalman->angle += rate * dt;
-
-    kalman->P[0][0] += dt * (dt*kalman->P[1][1] - kalman->P[0][1] - kalman->P[1][0] + kalman->Q_angle);
-    kalman->P[0][1] -= dt * kalman->P[1][1];
-    kalman->P[1][0] -= dt * kalman->P[1][1];
-    kalman->P[1][1] += kalman->Q_bias * dt;
-
-    // 2. Cập nhật
-    double S = kalman->P[0][0] + kalman->R_measure;
-    double K[2];
-    K[0] = kalman->P[0][0] / S;
-    K[1] = kalman->P[1][0] / S;
-
-    double y = newAngle - kalman->angle;
-    kalman->angle += K[0] * y;
-    kalman->bias += K[1] * y;
-
-    double P00_temp = kalman->P[0][0];
-    double P01_temp = kalman->P[0][1];
-
-    kalman->P[0][0] -= K[0] * P00_temp;
-    kalman->P[0][1] -= K[0] * P01_temp;
-    kalman->P[1][0] -= K[1] * P00_temp;
-    kalman->P[1][1] -= K[1] * P01_temp;
-
-    return kalman->angle;
-}
-
-// ==========================================
-// 2. KALMAN FILTER 1 CHIỀU (CHO SVM)
-// Chỉ làm mượt tín hiệu, loại bỏ nhiễu gai nhỏ
-// ==========================================
-typedef struct {
-    double err_measure;
-    double err_estimate;
-    double q;
-    double current_estimate;
-    double last_estimate;
-    double kalman_gain;
-} SimpleKalman_t;
-
-void SimpleKalman_Init(SimpleKalman_t *k, double mea_e, double est_e, double q) {
-    k->err_measure = mea_e;
-    k->err_estimate = est_e;
-    k->q = q;
-    k->current_estimate = 0;
-    k->last_estimate = 0;
-}
-
-double SimpleKalman_Update(SimpleKalman_t *k, double mea) {
-    k->kalman_gain = k->err_estimate / (k->err_estimate + k->err_measure);
-    k->current_estimate = k->last_estimate + k->kalman_gain * (mea - k->last_estimate);
-    k->err_estimate = (1.0 - k->kalman_gain) * k->err_estimate + k->q * fabs(k->last_estimate - k->current_estimate);
-    k->last_estimate = k->current_estimate;
-    return k->current_estimate;
-}
-
-// --- HÀM I2C ---
+// ============================================================
+// 4. HÀM GIAO TIẾP I2C (DRIVER)
+// ============================================================
 static void i2c_init() {
     i2c_config_t conf = {
-        .mode = I2C_MODE_MASTER, .sda_io_num = I2C_SDA_IO, .scl_io_num = I2C_SCL_IO,
-        .sda_pullup_en = GPIO_PULLUP_ENABLE, .scl_pullup_en = GPIO_PULLUP_ENABLE,
-        .master.clk_speed = 400000, .clk_flags = 0
+        .mode = I2C_MODE_MASTER,
+        .sda_io_num = I2C_SDA_IO,
+        .scl_io_num = I2C_SCL_IO,
+        .sda_pullup_en = GPIO_PULLUP_ENABLE,
+        .scl_pullup_en = GPIO_PULLUP_ENABLE,
+        .master.clk_speed = 400000, // Tốc độ 400kHz
+        .clk_flags = 0,
     };
     i2c_param_config(0, &conf);
     i2c_driver_install(0, conf.mode, 0, 0, 0);
 }
 
-static void mpu6050_wake() {
+// Hàm ghi vào thanh ghi MAX30102
+static void i2c_write_reg(uint8_t reg, uint8_t data) {
     i2c_cmd_handle_t cmd = i2c_cmd_link_create();
     i2c_master_start(cmd);
-    i2c_master_write_byte(cmd, (MPU6050_ADDR << 1) | I2C_MASTER_WRITE, true);
-    i2c_master_write_byte(cmd, 0x6B, true); i2c_master_write_byte(cmd, 0x00, true);
+    i2c_master_write_byte(cmd, (MAX30102_ADDR << 1) | I2C_MASTER_WRITE, true);
+    i2c_master_write_byte(cmd, reg, true);
+    i2c_master_write_byte(cmd, data, true);
     i2c_master_stop(cmd);
     i2c_master_cmd_begin(0, cmd, pdMS_TO_TICKS(100));
     i2c_cmd_link_delete(cmd);
 }
 
-// --- MAIN ---
-void app_main(void) {
-    i2c_init();
-    mpu6050_wake();
+// ============================================================
+// 5. KHỞI TẠO CẢM BIẾN MAX30102
+// ============================================================
+void max30102_init() {
+    // Reset cảm biến
+    i2c_write_reg(REG_MODE_CONFIG, 0x40);
+    vTaskDelay(100 / portTICK_PERIOD_MS);
 
-    // A. Khởi tạo Kalman cho Góc
-    Kalman_t kRoll, kPitch;
-    Kalman_Init(&kRoll);
-    Kalman_Init(&kPitch);
+    // Xóa các con trỏ bộ đệm (FIFO)
+    i2c_write_reg(REG_FIFO_WR_PTR, 0x00);
+    i2c_write_reg(REG_FIFO_OVF_CNT, 0x00);
+    i2c_write_reg(REG_FIFO_RD_PTR, 0x00);
 
-    // B. Khởi tạo Kalman cho SVM
-    SimpleKalman_t kSVM;
-    SimpleKalman_Init(&kSVM, 0.5, 0.5, 0.01); // Q=0.01 để mượt, tăng lên 0.1 nếu muốn nhạy hơn
+    // Cấu hình bộ đệm: Lấy trung bình 4 mẫu để giảm nhiễu
+    i2c_write_reg(REG_FIFO_CONFIG, 0x20); 
 
-    uint8_t data[14];
-    int64_t last_time = esp_timer_get_time();
+    // Chế độ SpO2 (Dùng cả LED Đỏ và LED Hồng ngoại)
+    i2c_write_reg(REG_MODE_CONFIG, 0x03);
 
-    printf("pitch_raw,pitch_kalman,roll_raw,roll_kalman,svm_raw,svm_kalman\n");
+    // Cấu hình SpO2: Dải đo 4096nA, Tần số 100Hz, Độ rộng xung 411us
+    i2c_write_reg(REG_SPO2_CONFIG, 0x27);
 
-    while(1) {
-        // Đọc 14 bytes (Accel + Temp + Gyro)
-        i2c_cmd_handle_t cmd = i2c_cmd_link_create();
-        i2c_master_start(cmd);
-        i2c_master_write_byte(cmd, (MPU6050_ADDR << 1) | I2C_MASTER_WRITE, true);
-        i2c_master_write_byte(cmd, 0x3B, true);
-        i2c_master_start(cmd);
-        i2c_master_write_byte(cmd, (MPU6050_ADDR << 1) | I2C_MASTER_READ, true);
-        i2c_master_read(cmd, data, 13, I2C_MASTER_ACK);
-        i2c_master_read_byte(cmd, data + 13, I2C_MASTER_NACK);
-        i2c_master_stop(cmd);
+    // Cấu hình độ sáng đèn LED (Dòng điện cấp cho LED)
+    // 0x24 (khoảng 7mA) là mức trung bình, tiết kiệm pin và ít nóng
+    i2c_write_reg(REG_LED1_PA, 0x24); // LED Đỏ
+    i2c_write_reg(REG_LED2_PA, 0x24); // LED Hồng ngoại (IR)
+}
+
+// Đọc dữ liệu thô từ cảm biến
+void read_max30102(uint32_t *red, uint32_t *ir) {
+    uint8_t data[6];
+    i2c_cmd_handle_t cmd = i2c_cmd_link_create();
+    
+    // Chọn thanh ghi dữ liệu FIFO
+    i2c_master_start(cmd);
+    i2c_master_write_byte(cmd, (MAX30102_ADDR << 1) | I2C_MASTER_WRITE, true);
+    i2c_master_write_byte(cmd, REG_FIFO_DATA, true);
+    
+    // Đọc 6 byte dữ liệu (3 byte RED, 3 byte IR)
+    i2c_master_start(cmd);
+    i2c_master_write_byte(cmd, (MAX30102_ADDR << 1) | I2C_MASTER_READ, true);
+    i2c_master_read(cmd, data, 6, I2C_MASTER_LAST_NACK);
+    i2c_master_stop(cmd);
+    
+    esp_err_t ret = i2c_master_cmd_begin(0, cmd, pdMS_TO_TICKS(100));
+    i2c_cmd_link_delete(cmd);
+
+    if (ret == ESP_OK) {
+        // Ghép các byte lại thành số nguyên 32-bit (chỉ lấy 18-bit dữ liệu thực)
+        *red = ((uint32_t)(data[0] & 0x03) << 16) | ((uint32_t)data[1] << 8) | data[2];
+        *ir  = ((uint32_t)(data[3] & 0x03) << 16) | ((uint32_t)data[4] << 8) | data[5];
+    } else {
+        *red = 0; *ir = 0;
+    }
+}
+
+// ============================================================
+// 6. THUẬT TOÁN XỬ LÝ TÍN HIỆU (NHỊP TIM & SpO2)
+// ============================================================
+void process_heart_rate(uint32_t red_raw, uint32_t ir_raw) {
+    // --- BƯỚC 1: Kiểm tra có ngón tay không ---
+    // Nếu giá trị hồng ngoại (IR) < 50,000 nghĩa là không có vật thể phản xạ (không có tay)
+    if (ir_raw < 50000) {
+        current_bpm = 0;
+        current_spo2 = 0;
+        finger_detected = 0; // Đánh dấu là không có tay
+        gpio_set_level(LED_PIN, 1); // Tắt đèn (nếu điều khiển được)
+        return;
+    }
+    finger_detected = 1; // Đã phát hiện ngón tay
+
+    // --- BƯỚC 2: Bộ lọc DC (Loại bỏ thành phần một chiều) ---
+    // Dùng bộ lọc trung bình động (Moving Average) để tìm mức nền (DC)
+    static double avg_ir = 0;
+    static double avg_red = 0;
+
+    if (avg_ir == 0) avg_ir = ir_raw;
+    if (avg_red == 0) avg_red = red_raw;
+
+    // Lọc thông thấp (Low Pass Filter)
+    avg_ir = 0.95 * avg_ir + 0.05 * ir_raw;
+    avg_red = 0.95 * avg_red + 0.05 * red_raw;
+
+    // Tách lấy tín hiệu xoay chiều (AC) - đây chính là tín hiệu nhịp tim
+    double ac_ir = ir_raw - avg_ir;
+    double ac_red = red_raw - avg_red;
+
+    // --- BƯỚC 3: Phát hiện đỉnh nhịp tim (Peak Detection) ---
+    // Ngưỡng để xác định một nhịp đập (cần tinh chỉnh tùy vào phần cứng)
+    double threshold = -100.0; 
+    static int was_below = 0;
+    double now = (double)esp_timer_get_time() / 1000000.0; // Lấy thời gian hiện tại (giây)
+
+    // Thuật toán: Khi tín hiệu đi xuống qua ngưỡng âm (do máu bơm vào làm hấp thụ ánh sáng tăng -> tín hiệu raw giảm)
+    if (ac_ir < threshold && !was_below) {
+        was_below = 1; // Đánh dấu đã vượt ngưỡng
         
-        if (i2c_master_cmd_begin(0, cmd, pdMS_TO_TICKS(100)) == ESP_OK) {
-            // 1. Lấy dữ liệu thô
-            float ax = (int16_t)((data[0] << 8) | data[1]) / 16384.0;
-            float ay = (int16_t)((data[2] << 8) | data[3]) / 16384.0;
-            float az = (int16_t)((data[4] << 8) | data[5]) / 16384.0;
-            float gx = (int16_t)((data[8] << 8) | data[9]) / 131.0;
-            float gy = (int16_t)((data[10] << 8) | data[11]) / 131.0;
-
-            // 2. Tính dt (giây)
-            int64_t now = esp_timer_get_time();
-            double dt = (now - last_time) / 1000000.0;
-            last_time = now;
-
-            // ==========================================
-            // PITCH
-            // ==========================================
-            // Pitch Raw: Tính từ Accel (atan2)
-            // Pitch = atan2(-Ax, sqrt(Ay^2 + Az^2)) * 57.29
-            double pitch_raw = atan2(-ax, sqrt(ay*ay + az*az)) * 57.2958;
+        // Tính BPM nếu đây không phải là lần đầu tiên
+        if (last_beat_time > 0) {
+            double delta = now - last_beat_time; // Khoảng thời gian giữa 2 nhịp
+            double instant_bpm = 60.0 / delta;   // Tính ra nhịp/phút
             
-            // Pitch Kalman: Kết hợp Pitch Raw + Gyro Y
-            double pitch_kalman = Kalman_GetAngle(&kPitch, pitch_raw, gy, dt);
+            // Lọc kết quả rác (Chỉ nhận BPM từ 40 đến 180)
+            if (instant_bpm > 40 && instant_bpm < 180) {
+                // Làm mượt kết quả bằng công thức trung bình trọng số
+                if (current_bpm == 0) current_bpm = instant_bpm;
+                else current_bpm = 0.7 * current_bpm + 0.3 * instant_bpm;
+                
+                // --- BƯỚC 4: Tính SpO2 ---
+                // Tỷ lệ R = (AC_Red / DC_Red) / (AC_IR / DC_IR)
+                double r_ratio = (fabs(ac_red) / avg_red) / (fabs(ac_ir) / avg_ir);
+                
+                // Công thức thực nghiệm chuẩn: SpO2 = 104 - 17 * R
+                double instant_spo2 = 104.0 - 17.0 * r_ratio;
+                
+                // Giới hạn kết quả trong khoảng 0-100%
+                if (instant_spo2 > 100) instant_spo2 = 100;
+                if (instant_spo2 < 80) instant_spo2 = 80; // Giới hạn dưới để tránh hiện số ảo
+                
+                if (current_spo2 == 0) current_spo2 = instant_spo2;
+                else current_spo2 = 0.8 * current_spo2 + 0.2 * instant_spo2;
 
-            // ==========================================
-            // ROLL
-            // ==========================================
-            // Roll Raw: Tính từ Accel
-            // Roll = atan2(Ay, Az) * 57.29
-            double roll_raw = atan2(ay, az) * 57.2958;
-
-            // Roll Kalman: Kết hợp Roll Raw + Gyro X
-            double roll_kalman = Kalman_GetAngle(&kRoll, roll_raw, gx, dt);
-
-            // ==========================================
-            // SVM (Signal Vector Magnitude)
-            // ==========================================
-            // SVM Raw: Tổng hợp lực
-            double svm_raw = sqrt(ax*ax + ay*ay + az*az);
-
-            // SVM Kalman: Lọc nhiễu 1 chiều
-            double svm_kalman = SimpleKalman_Update(&kSVM, svm_raw);
-
-            // 3. IN RA MONITOR (Đúng thứ tự bạn yêu cầu)
-            printf("%.2f,%.2f,%.2f,%.2f,%.2f,%.2f\n", 
-                   pitch_raw, pitch_kalman, 
-                   roll_raw, roll_kalman, 
-                   svm_raw, svm_kalman);
+                // Nháy đèn LED theo nhịp tim (nếu LED dùng được)
+                gpio_set_level(LED_PIN, 0); 
+            }
         }
-        i2c_cmd_link_delete(cmd);
-        vTaskDelay(10 / portTICK_PERIOD_MS); // 100Hz
+        last_beat_time = now; // Cập nhật thời gian cho lần sau
+    } else if (ac_ir > threshold) {
+        was_below = 0; // Reset trạng thái khi tín hiệu quay về mức bình thường
+        gpio_set_level(LED_PIN, 1); // Tắt đèn
+    }
+}
+
+// ============================================================
+// 7. CHƯƠNG TRÌNH CHÍNH (MAIN)
+// ============================================================
+void app_main(void) {
+    // A. Khởi tạo LED
+    gpio_reset_pin(LED_PIN);
+    gpio_set_direction(LED_PIN, GPIO_MODE_OUTPUT);
+    gpio_set_level(LED_PIN, 1); // Tắt mặc định
+
+    // B. Khởi tạo I2C và Cảm biến
+    i2c_init();
+    max30102_init();
+
+    printf("\n=== MAY DO NHIP TIM & SpO2 ===\n");
+    printf("Khoi dong thanh cong!\n");
+    printf("Vui long dat ngon tay len cam bien va giu yen...\n");
+    printf("Ket qua se hien thi moi %d giay.\n\n", REPORT_INTERVAL_MS/1000);
+
+    // Biến đếm thời gian báo cáo
+    int64_t last_report_time = esp_timer_get_time();
+
+    uint32_t red, ir;
+    
+    // C. Vòng lặp vô tận
+    while (1) {
+        // 1. ĐỌC & XỬ LÝ (Phần này phải chạy RẤT NHANH - 100 lần/giây)
+        read_max30102(&red, &ir);
+        process_heart_rate(red, ir);
+
+        // 2. HIỂN THỊ KẾT QUẢ (Chỉ chạy mỗi 5 giây 1 lần)
+        int64_t now = esp_timer_get_time();
+        if ((now - last_report_time) > (REPORT_INTERVAL_MS * 1000)) {
+            
+            if (finger_detected) {
+                // Nếu có ngón tay -> In kết quả đo được
+                printf("--------------------------------\n");
+                printf("[KET QUA DO]\n");
+                // %.0f để làm tròn số nguyên cho đẹp
+                printf(">> Nhip tim (BPM)   : %.0f nhip/phut\n", current_bpm); 
+                printf(">> Oxy trong mau    : %.1f %%\n", current_spo2);
+                printf("--------------------------------\n");
+            } else {
+                // Nếu không có ngón tay -> Nhắc nhở
+                printf("[TRANG THAI] Khong thay ngon tay. Vui long dat tay vao!\n");
+            }
+            
+            // Cập nhật lại thời gian báo cáo
+            last_report_time = now;
+        }
+
+        // Delay ngắn để duy trì tần số lấy mẫu ~100Hz
+        vTaskDelay(10 / portTICK_PERIOD_MS); 
     }
 }

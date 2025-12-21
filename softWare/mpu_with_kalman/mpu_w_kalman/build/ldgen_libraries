@@ -23,6 +23,7 @@ D:/BTL_VXL/softWare/mpu_with_kalman/mpu_w_kalman/build/esp-idf/esp_driver_uart/l
 D:/BTL_VXL/softWare/mpu_with_kalman/mpu_w_kalman/build/esp-idf/esp_ringbuf/libesp_ringbuf.a
 D:/BTL_VXL/softWare/mpu_with_kalman/mpu_w_kalman/build/esp-idf/esp_mm/libesp_mm.a
 D:/BTL_VXL/softWare/mpu_with_kalman/mpu_w_kalman/build/esp-idf/vfs/libvfs.a
+D:/BTL_VXL/softWare/mpu_with_kalman/mpu_w_kalman/build/esp-idf/esp_driver_usb_serial_jtag/libesp_driver_usb_serial_jtag.a
 D:/BTL_VXL/softWare/mpu_with_kalman/mpu_w_kalman/build/esp-idf/esp_vfs_console/libesp_vfs_console.a
 D:/BTL_VXL/softWare/mpu_with_kalman/mpu_w_kalman/build/esp-idf/mbedtls/mbedtls/library/libmbedtls.a
 D:/BTL_VXL/softWare/mpu_with_kalman/mpu_w_kalman/build/esp-idf/mbedtls/mbedtls/library/libmbedx509.a
@@ -35,6 +36,7 @@ D:/BTL_VXL/softWare/mpu_with_kalman/mpu_w_kalman/build/esp-idf/esp_partition/lib
 D:/BTL_VXL/softWare/mpu_with_kalman/mpu_w_kalman/build/esp-idf/app_update/libapp_update.a
 D:/BTL_VXL/softWare/mpu_with_kalman/mpu_w_kalman/build/esp-idf/esp_app_format/libesp_app_format.a
 D:/BTL_VXL/softWare/mpu_with_kalman/mpu_w_kalman/build/esp-idf/esp_bootloader_format/libesp_bootloader_format.a
+D:/BTL_VXL/softWare/mpu_with_kalman/mpu_w_kalman/build/esp-idf/esp_mm/libesp_mm.a
 D:/BTL_VXL/softWare/mpu_with_kalman/mpu_w_kalman/build/esp-idf/esp_gdbstub/libesp_gdbstub.a
 D:/BTL_VXL/softWare/mpu_with_kalman/mpu_w_kalman/build/esp-idf/driver/libdriver.a
 D:/BTL_VXL/softWare/mpu_with_kalman/mpu_w_kalman/build/esp-idf/esp_driver_pcnt/libesp_driver_pcnt.a
@@ -45,9 +47,8 @@ D:/BTL_VXL/softWare/mpu_with_kalman/mpu_w_kalman/build/esp-idf/esp_driver_i2s/li
 D:/BTL_VXL/softWare/mpu_with_kalman/mpu_w_kalman/build/esp-idf/esp_driver_sdmmc/libesp_driver_sdmmc.a
 D:/BTL_VXL/softWare/mpu_with_kalman/mpu_w_kalman/build/esp-idf/sdmmc/libsdmmc.a
 D:/BTL_VXL/softWare/mpu_with_kalman/mpu_w_kalman/build/esp-idf/esp_driver_sdspi/libesp_driver_sdspi.a
-D:/BTL_VXL/softWare/mpu_with_kalman/mpu_w_kalman/build/esp-idf/esp_driver_sdio/libesp_driver_sdio.a
-D:/BTL_VXL/softWare/mpu_with_kalman/mpu_w_kalman/build/esp-idf/esp_driver_dac/libesp_driver_dac.a
 D:/BTL_VXL/softWare/mpu_with_kalman/mpu_w_kalman/build/esp-idf/esp_driver_rmt/libesp_driver_rmt.a
+D:/BTL_VXL/softWare/mpu_with_kalman/mpu_w_kalman/build/esp-idf/esp_driver_tsens/libesp_driver_tsens.a
 D:/BTL_VXL/softWare/mpu_with_kalman/mpu_w_kalman/build/esp-idf/esp_driver_sdm/libesp_driver_sdm.a
 D:/BTL_VXL/softWare/mpu_with_kalman/mpu_w_kalman/build/esp-idf/esp_driver_i2c/libesp_driver_i2c.a
 D:/BTL_VXL/softWare/mpu_with_kalman/mpu_w_kalman/build/esp-idf/esp_driver_ledc/libesp_driver_ledc.a
@@ -77,7 +78,6 @@ D:/BTL_VXL/softWare/mpu_with_kalman/mpu_w_kalman/build/esp-idf/app_update/libapp
 D:/BTL_VXL/softWare/mpu_with_kalman/mpu_w_kalman/build/esp-idf/esp_partition/libesp_partition.a
 D:/BTL_VXL/softWare/mpu_with_kalman/mpu_w_kalman/build/esp-idf/efuse/libefuse.a
 D:/BTL_VXL/softWare/mpu_with_kalman/mpu_w_kalman/build/esp-idf/bootloader_support/libbootloader_support.a
-D:/BTL_VXL/softWare/mpu_with_kalman/mpu_w_kalman/build/esp-idf/esp_mm/libesp_mm.a
 D:/BTL_VXL/softWare/mpu_with_kalman/mpu_w_kalman/build/esp-idf/spi_flash/libspi_flash.a
 D:/BTL_VXL/softWare/mpu_with_kalman/mpu_w_kalman/build/esp-idf/esp_system/libesp_system.a
 D:/BTL_VXL/softWare/mpu_with_kalman/mpu_w_kalman/build/esp-idf/esp_common/libesp_common.a
@@ -99,6 +99,7 @@ D:/BTL_VXL/softWare/mpu_with_kalman/mpu_w_kalman/build/esp-idf/app_trace/libapp_
 D:/BTL_VXL/softWare/mpu_with_kalman/mpu_w_kalman/build/esp-idf/esp_event/libesp_event.a
 D:/BTL_VXL/softWare/mpu_with_kalman/mpu_w_kalman/build/esp-idf/nvs_flash/libnvs_flash.a
 D:/BTL_VXL/softWare/mpu_with_kalman/mpu_w_kalman/build/esp-idf/esp_phy/libesp_phy.a
+D:/BTL_VXL/softWare/mpu_with_kalman/mpu_w_kalman/build/esp-idf/esp_driver_usb_serial_jtag/libesp_driver_usb_serial_jtag.a
 D:/BTL_VXL/softWare/mpu_with_kalman/mpu_w_kalman/build/esp-idf/esp_vfs_console/libesp_vfs_console.a
 D:/BTL_VXL/softWare/mpu_with_kalman/mpu_w_kalman/build/esp-idf/lwip/liblwip.a
 D:/BTL_VXL/softWare/mpu_with_kalman/mpu_w_kalman/build/esp-idf/esp_netif/libesp_netif.a
@@ -117,9 +118,8 @@ D:/BTL_VXL/softWare/mpu_with_kalman/mpu_w_kalman/build/esp-idf/esp_driver_i2s/li
 D:/BTL_VXL/softWare/mpu_with_kalman/mpu_w_kalman/build/esp-idf/sdmmc/libsdmmc.a
 D:/BTL_VXL/softWare/mpu_with_kalman/mpu_w_kalman/build/esp-idf/esp_driver_sdmmc/libesp_driver_sdmmc.a
 D:/BTL_VXL/softWare/mpu_with_kalman/mpu_w_kalman/build/esp-idf/esp_driver_sdspi/libesp_driver_sdspi.a
-D:/BTL_VXL/softWare/mpu_with_kalman/mpu_w_kalman/build/esp-idf/esp_driver_sdio/libesp_driver_sdio.a
-D:/BTL_VXL/softWare/mpu_with_kalman/mpu_w_kalman/build/esp-idf/esp_driver_dac/libesp_driver_dac.a
 D:/BTL_VXL/softWare/mpu_with_kalman/mpu_w_kalman/build/esp-idf/esp_driver_rmt/libesp_driver_rmt.a
+D:/BTL_VXL/softWare/mpu_with_kalman/mpu_w_kalman/build/esp-idf/esp_driver_tsens/libesp_driver_tsens.a
 D:/BTL_VXL/softWare/mpu_with_kalman/mpu_w_kalman/build/esp-idf/esp_driver_sdm/libesp_driver_sdm.a
 D:/BTL_VXL/softWare/mpu_with_kalman/mpu_w_kalman/build/esp-idf/esp_driver_i2c/libesp_driver_i2c.a
 D:/BTL_VXL/softWare/mpu_with_kalman/mpu_w_kalman/build/esp-idf/esp_driver_ledc/libesp_driver_ledc.a
@@ -155,6 +155,8 @@ D:/BTL_VXL/softWare/mpu_with_kalman/mpu_w_kalman/build/esp-idf/nvs_sec_provider/
 D:/BTL_VXL/softWare/mpu_with_kalman/mpu_w_kalman/build/esp-idf/perfmon/libperfmon.a
 D:/BTL_VXL/softWare/mpu_with_kalman/mpu_w_kalman/build/esp-idf/rt/librt.a
 D:/BTL_VXL/softWare/mpu_with_kalman/mpu_w_kalman/build/esp-idf/spiffs/libspiffs.a
+D:/BTL_VXL/softWare/mpu_with_kalman/mpu_w_kalman/build/esp-idf/touch_element/libtouch_element.a
+D:/BTL_VXL/softWare/mpu_with_kalman/mpu_w_kalman/build/esp-idf/usb/libusb.a
 D:/BTL_VXL/softWare/mpu_with_kalman/mpu_w_kalman/build/esp-idf/wifi_provisioning/libwifi_provisioning.a
 D:/BTL_VXL/softWare/mpu_with_kalman/mpu_w_kalman/build/esp-idf/json/libjson.a
 D:/BTL_VXL/softWare/mpu_with_kalman/mpu_w_kalman/build/esp-idf/main/libmain.a
