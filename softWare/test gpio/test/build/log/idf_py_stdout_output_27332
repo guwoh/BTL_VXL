@@ -1,0 +1,48 @@
+Command: C:\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe C:\Espressif\frameworks\esp-idf-v5.5.1\tools/idf_monitor.py -p COM14 -b 115200 --toolchain-prefix xtensa-esp32s3-elf- --target esp32s3 --revision 0 D:\BTL_VXL\softWare\test gpio\test\build\test.elf D:\BTL_VXL\softWare\test gpio\test\build\bootloader\bootloader.elf --force-color -m 'C:\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe' 'C:\Espressif\frameworks\esp-idf-v5.5.1\tools\idf.py' '-p' 'COM14'
+ESP-ROM:esp32s3-20210327
+Build:Mar 27 2021
+rst:0x15 (USB_UART_CHIP_RESET),boot:0x22 (DOWNLOAD(USB/UART0))
+Saved PC:0x40041a79
+waiting for download
+[0;32mI (5379) MAX30102: --- 5 Seconds Report ---[0m
+[0;33mW (5379) MAX30102: No finger detected (IR Value low: 665)[0m
+[0;32mI (10379) MAX30102: --- 5 Seconds Report ---[0m
+[0;32mI (10379) MAX30102: Finger Detected![0m
+[0;32mI (10379) MAX30102: Raw Red: 123991[0m
+[0;32mI (10379) MAX30102: Raw IR:  147151[0m
+[0;32mI (15379) MAX30102: --- 5 Seconds Report ---[0m
+[0;32mI (15379) MAX30102: Finger Detected![0m
+[0;32mI (15379) MAX30102: Raw Red: 122766[0m
+[0;32mI (15379) MAX30102: Raw IR:  146541[0m
+[0;32mI (20379) MAX30102: --- 5 Seconds Report ---[0m
+[0;32mI (20379) MAX30102: Finger Detected![0m
+[0;32mI (20379) MAX30102: Raw Red: 122268[0m
+[0;32mI (20379) MAX30102: Raw IR:  147367[0m
+[0;32mI (25379) MAX30102: --- 5 Seconds Report ---[0m
+[0;33mW (25379) MAX30102: No finger detected (IR Value low: 1343)[0m
+[0;32mI (30379) MAX30102: --- 5 Seconds Report ---[0m
+[0;33mW (30379) MAX30102: No finger detected (IR Value low: 1395)[0m
+[0;32mI (35379) MAX30102: --- 5 Seconds Report ---[0m
+[0;33mW (35379) MAX30102: No finger detected (IR Value low: 1420)[0m
+[0;32mI (40379) MAX30102: --- 5 Seconds Report ---[0m
+[0;33mW (40379) MAX30102: No finger detected (IR Value low: 1450)[0m
+[0;32mI (45379) MAX30102: --- 5 Seconds Report ---[0m
+[0;33mW (45379) MAX30102: No finger detected (IR Value low: 1397)[0m
+[0;32mI (50379) MAX30102: --- 5 Seconds Report ---[0m
+[0;33mW (50379) MAX30102: No finger detected (IR Value low: 909)[0m
+[0;32mI (55379) MAX30102: --- 5 Seconds Report ---[0m
+[0;33mW (55379) MAX30102: No finger detected (IR Value low: 882)[0m
+[0;32mI (60379) MAX30102: --- 5 Seconds Report ---[0m
+[0;33mW (60379) MAX30102: No finger detected (IR Value low: 1171)[0m
+[0;32mI (65379) MAX30102: --- 5 Seconds Report ---[0m
+[0;33mW (65379) MAX30102: No finger detected (IR Value low: 2206)[0m
+[0;32mI (70379) MAX30102: --- 5 Seconds Report ---[0m
+[0;33mW (70379) MAX30102: No finger detected (IR Value low: 2468)[0m
+[0;32mI (75379) MAX30102: --- 5 Seconds Report ---[0m
+[0;33mW (75379) MAX30102: No finger detected (IR Value low: 2377)[0m
+[0;32mI (80379) MAX30102: --- 5 Seconds Report ---[0m
+[0;33mW (80379) MAX30102: No finger detected (IR Value low: 2540)[0m
+[0;32mI (85379) MAX30102: --- 5 Seconds Report ---[0m
+[0;33mW (85379) MAX30102: No finger detected (IR Value low: 861)[0m
+[0;32mI (90379) MAX30102: --- 5 Seconds Report ---[0m
+[0;33mW (90379) MAX30102: No finger detected (IR Value low: 768)[0m

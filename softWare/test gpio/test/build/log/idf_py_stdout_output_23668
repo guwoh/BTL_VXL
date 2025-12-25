@@ -1,0 +1,175 @@
+Command: C:\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe C:\Espressif\frameworks\esp-idf-v5.5.1\tools/idf_monitor.py -p COM14 -b 115200 --toolchain-prefix xtensa-esp32s3-elf- --target esp32s3 --revision 0 D:\BTL_VXL\softWare\test gpio\test\build\test.elf D:\BTL_VXL\softWare\test gpio\test\build\bootloader\bootloader.elf --force-color -m 'C:\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe' 'C:\Espressif\frameworks\esp-idf-v5.5.1\tools\idf.py' '-p' 'COM14'
+ESP-ROM:esp32s3-20210327
+Build:Mar 27 2021
+rst:0x15 (USB_UART_CHIP_RESET),boot:0x22 (DOWNLOAD(USB/UART0))
+Saved PC:0x40041a76
+waiting for download
+[TRANG THAI] Khong thay ngon tay. Vui long dat tay vao!
+--------------------------------
+[KET QUA DO]
+>> Nhip tim (BPM)   : 0 nhip/phut
+>> Oxy trong mau    : 0.0 %
+--------------------------------
+--------------------------------
+[KET QUA DO]
+>> Nhip tim (BPM)   : 87 nhip/phut
+>> Oxy trong mau    : 100.0 %
+--------------------------------
+--------------------------------
+[KET QUA DO]
+>> Nhip tim (BPM)   : 111 nhip/phut
+>> Oxy trong mau    : 99.7 %
+--------------------------------
+--------------------------------
+[KET QUA DO]
+>> Nhip tim (BPM)   : 111 nhip/phut
+>> Oxy trong mau    : 99.7 %
+--------------------------------
+--------------------------------
+[KET QUA DO]
+>> Nhip tim (BPM)   : 115 nhip/phut
+>> Oxy trong mau    : 96.1 %
+--------------------------------
+--------------------------------
+[KET QUA DO]
+>> Nhip tim (BPM)   : 115 nhip/phut
+>> Oxy trong mau    : 96.1 %
+--------------------------------
+--------------------------------
+[KET QUA DO]
+>> Nhip tim (BPM)   : 119 nhip/phut
+>> Oxy trong mau    : 84.0 %
+--------------------------------
+--------------------------------
+[KET QUA DO]
+>> Nhip tim (BPM)   : 0 nhip/phut
+>> Oxy trong mau    : 0.0 %
+--------------------------------
+--------------------------------
+[KET QUA DO]
+>> Nhip tim (BPM)   : 0 nhip/phut
+>> Oxy trong mau    : 0.0 %
+--------------------------------
+--------------------------------
+[KET QUA DO]
+>> Nhip tim (BPM)   : 61 nhip/phut
+>> Oxy trong mau    : 80.0 %
+--------------------------------
+--------------------------------
+[KET QUA DO]
+>> Nhip tim (BPM)   : 61 nhip/phut
+>> Oxy trong mau    : 80.0 %
+--------------------------------
+--------------------------------
+[KET QUA DO]
+>> Nhip tim (BPM)   : 61 nhip/phut
+>> Oxy trong mau    : 80.0 %
+--------------------------------
+[TRANG THAI] Khong thay ngon tay. Vui long dat tay vao!
+[TRANG THAI] Khong thay ngon tay. Vui long dat tay vao!
+[TRANG THAI] Khong thay ngon tay. Vui long dat tay vao!
+[TRANG THAI] Khong thay ngon tay. Vui long dat tay vao!
+[TRANG THAI] Khong thay ngon tay. Vui long dat tay vao!
+[TRANG THAI] Khong thay ngon tay. Vui long dat tay vao!
+--------------------------------
+[KET QUA DO]
+>> Nhip tim (BPM)   : 154 nhip/phut
+>> Oxy trong mau    : 80.0 %
+--------------------------------
+[TRANG THAI] Khong thay ngon tay. Vui long dat tay vao!
+[TRANG THAI] Khong thay ngon tay. Vui long dat tay vao!
+[TRANG THAI] Khong thay ngon tay. Vui long dat tay vao!
+[TRANG THAI] Khong thay ngon tay. Vui long dat tay vao!
+[TRANG THAI] Khong thay ngon tay. Vui long dat tay vao!
+--------------------------------
+[KET QUA DO]
+>> Nhip tim (BPM)   : 127 nhip/phut
+>> Oxy trong mau    : 83.1 %
+--------------------------------
+--------------------------------
+[KET QUA DO]
+>> Nhip tim (BPM)   : 0 nhip/phut
+>> Oxy trong mau    : 0.0 %
+--------------------------------
+[TRANG THAI] Khong thay ngon tay. Vui long dat tay vao!
+[TRANG THAI] Khong thay ngon tay. Vui long dat tay vao!
+--------------------------------
+[KET QUA DO]
+>> Nhip tim (BPM)   : 0 nhip/phut
+>> Oxy trong mau    : 0.0 %
+--------------------------------
+--------------------------------
+[KET QUA DO]
+>> Nhip tim (BPM)   : 93 nhip/phut
+>> Oxy trong mau    : 82.9 %
+--------------------------------
+--------------------------------
+[KET QUA DO]
+>> Nhip tim (BPM)   : 121 nhip/phut
+>> Oxy trong mau    : 81.9 %
+--------------------------------
+--------------------------------
+[KET QUA DO]
+>> Nhip tim (BPM)   : 111 nhip/phut
+>> Oxy trong mau    : 82.6 %
+--------------------------------
+--------------------------------
+[KET QUA DO]
+>> Nhip tim (BPM)   : 111 nhip/phut
+>> Oxy trong mau    : 82.6 %
+--------------------------------
+--------------------------------
+[KET QUA DO]
+>> Nhip tim (BPM)   : 115 nhip/phut
+>> Oxy trong mau    : 84.4 %
+--------------------------------
+--------------------------------
+[KET QUA DO]
+>> Nhip tim (BPM)   : 133 nhip/phut
+>> Oxy trong mau    : 85.3 %
+--------------------------------
+--------------------------------
+[KET QUA DO]
+>> Nhip tim (BPM)   : 133 nhip/phut
+>> Oxy trong mau    : 85.3 %
+--------------------------------
+--------------------------------
+[KET QUA DO]
+>> Nhip tim (BPM)   : 133 nhip/phut
+>> Oxy trong mau    : 85.3 %
+--------------------------------
+--------------------------------
+[KET QUA DO]
+>> Nhip tim (BPM)   : 119 nhip/phut
+>> Oxy trong mau    : 86.8 %
+--------------------------------
+--------------------------------
+[KET QUA DO]
+>> Nhip tim (BPM)   : 99 nhip/phut
+>> Oxy trong mau    : 88.0 %
+--------------------------------
+--------------------------------
+[KET QUA DO]
+>> Nhip tim (BPM)   : 94 nhip/phut
+>> Oxy trong mau    : 89.3 %
+--------------------------------
+--------------------------------
+[KET QUA DO]
+>> Nhip tim (BPM)   : 93 nhip/phut
+>> Oxy trong mau    : 93.0 %
+--------------------------------
+--------------------------------
+[KET QUA DO]
+>> Nhip tim (BPM)   : 93 nhip/phut
+>> Oxy trong mau    : 93.0 %
+--------------------------------
+--------------------------------
+[KET QUA DO]
+>> Nhip tim (BPM)   : 93 nhip/phut
+>> Oxy trong mau    : 93.0 %
+--------------------------------
+--------------------------------
+[KET QUA DO]
+>> Nhip tim (BPM)   : 102 nhip/phut
+>> Oxy trong mau    : 93.7 %
+--------------------------------

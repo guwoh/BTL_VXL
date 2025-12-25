@@ -1,0 +1,136 @@
+Command: C:\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe C:\Espressif\frameworks\esp-idf-v5.5.1\tools/idf_monitor.py -p COM14 -b 115200 --toolchain-prefix xtensa-esp32s3-elf- --target esp32s3 --revision 0 D:\BTL_VXL\softWare\test gpio\test\build\test.elf D:\BTL_VXL\softWare\test gpio\test\build\bootloader\bootloader.elf --force-color -m 'C:\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe' 'C:\Espressif\frameworks\esp-idf-v5.5.1\tools\idf.py' '-p' 'COM14'
+ESP-ROM:esp32s3-20210327
+Build:Mar 27 2021
+rst:0x15 (USB_UART_CHIP_RESET),boot:0x22 (DOWNLOAD(USB/UART0))
+Saved PC:0x40041a76
+waiting for download
+[0;32mI (5380) HEART_RATE: ---------------------------------[0m
+[0;32mI (5380) HEART_RATE: Trang thai: DANG DO...[0m
+[0;32mI (5380) HEART_RATE: Raw IR    : 135423[0m
+[0;32mI (5380) HEART_RATE: NHIP TIM  : 68.2 BPM[0m
+[0;32mI (10380) HEART_RATE: ---------------------------------[0m
+[0;32mI (10380) HEART_RATE: Trang thai: DANG DO...[0m
+[0;32mI (10380) HEART_RATE: Raw IR    : 136440[0m
+[0;32mI (10380) HEART_RATE: NHIP TIM  : 62.4 BPM[0m
+[0;32mI (15380) HEART_RATE: ---------------------------------[0m
+[0;33mW (15380) HEART_RATE: Trang thai: CHUA DAT TAY (IR=4620)[0m
+[0;32mI (20380) HEART_RATE: ---------------------------------[0m
+[0;32mI (20380) HEART_RATE: Trang thai: DANG DO...[0m
+[0;32mI (20380) HEART_RATE: Raw IR    : 123702[0m
+[0;32mI (20380) HEART_RATE: NHIP TIM  : 100.7 BPM[0m
+[0;32mI (25380) HEART_RATE: ---------------------------------[0m
+[0;32mI (25380) HEART_RATE: Trang thai: DANG DO...[0m
+[0;32mI (25380) HEART_RATE: Raw IR    : 122287[0m
+[0;32mI (25380) HEART_RATE: NHIP TIM  : 100.7 BPM[0m
+[0;32mI (30380) HEART_RATE: ---------------------------------[0m
+[0;32mI (30380) HEART_RATE: Trang thai: DANG DO...[0m
+[0;32mI (30380) HEART_RATE: Raw IR    : 122200[0m
+[0;32mI (30380) HEART_RATE: NHIP TIM  : 100.7 BPM[0m
+[0;32mI (35380) HEART_RATE: ---------------------------------[0m
+[0;32mI (35380) HEART_RATE: Trang thai: DANG DO...[0m
+[0;32mI (35380) HEART_RATE: Raw IR    : 137835[0m
+[0;32mI (35380) HEART_RATE: NHIP TIM  : 46.9 BPM[0m
+[0;32mI (40380) HEART_RATE: ---------------------------------[0m
+[0;32mI (40380) HEART_RATE: Trang thai: DANG DO...[0m
+[0;32mI (40380) HEART_RATE: Raw IR    : 137575[0m
+[0;32mI (40380) HEART_RATE: NHIP TIM  : 46.9 BPM[0m
+[0;32mI (45380) HEART_RATE: ---------------------------------[0m
+[0;32mI (45380) HEART_RATE: Trang thai: DANG DO...[0m
+[0;32mI (45380) HEART_RATE: Raw IR    : 119728[0m
+[0;32mI (45380) HEART_RATE: NHIP TIM  : 50.0 BPM[0m
+[0;32mI (50380) HEART_RATE: ---------------------------------[0m
+[0;32mI (50380) HEART_RATE: Trang thai: DANG DO...[0m
+[0;32mI (50380) HEART_RATE: Raw IR    : 119141[0m
+[0;32mI (50380) HEART_RATE: NHIP TIM  : 50.0 BPM[0m
+[0;32mI (55380) HEART_RATE: ---------------------------------[0m
+[0;32mI (55380) HEART_RATE: Trang thai: DANG DO...[0m
+[0;32mI (55380) HEART_RATE: Raw IR    : 121707[0m
+[0;32mI (55380) HEART_RATE: NHIP TIM  : 47.6 BPM[0m
+[0;32mI (60380) HEART_RATE: ---------------------------------[0m
+[0;32mI (60380) HEART_RATE: Trang thai: DANG DO...[0m
+[0;32mI (60380) HEART_RATE: Raw IR    : 134530[0m
+[0;32mI (60380) HEART_RATE: NHIP TIM  : 65.9 BPM[0m
+[0;32mI (65380) HEART_RATE: ---------------------------------[0m
+[0;32mI (65380) HEART_RATE: Trang thai: DANG DO...[0m
+[0;32mI (65380) HEART_RATE: Raw IR    : 136320[0m
+[0;32mI (65380) HEART_RATE: NHIP TIM  : Dang tinh toan...[0m
+[0;32mI (70380) HEART_RATE: ---------------------------------[0m
+[0;32mI (70380) HEART_RATE: Trang thai: DANG DO...[0m
+[0;32mI (70380) HEART_RATE: Raw IR    : 135657[0m
+[0;32mI (70380) HEART_RATE: NHIP TIM  : 84.5 BPM[0m
+[0;32mI (75380) HEART_RATE: ---------------------------------[0m
+[0;32mI (75380) HEART_RATE: Trang thai: DANG DO...[0m
+[0;32mI (75380) HEART_RATE: Raw IR    : 135617[0m
+[0;32mI (75380) HEART_RATE: NHIP TIM  : 84.5 BPM[0m
+[0;32mI (80380) HEART_RATE: ---------------------------------[0m
+[0;32mI (80380) HEART_RATE: Trang thai: DANG DO...[0m
+[0;32mI (80380) HEART_RATE: Raw IR    : 115297[0m
+[0;32mI (80380) HEART_RATE: NHIP TIM  : 76.9 BPM[0m
+[0;32mI (85380) HEART_RATE: ---------------------------------[0m
+[0;32mI (85380) HEART_RATE: Trang thai: DANG DO...[0m
+[0;32mI (85380) HEART_RATE: Raw IR    : 121813[0m
+[0;32mI (85380) HEART_RATE: NHIP TIM  : Dang tinh toan...[0m
+[0;32mI (90380) HEART_RATE: ---------------------------------[0m
+[0;32mI (90380) HEART_RATE: Trang thai: DANG DO...[0m
+[0;32mI (90380) HEART_RATE: Raw IR    : 114410[0m
+[0;32mI (90380) HEART_RATE: NHIP TIM  : 153.8 BPM[0m
+[0;32mI (95380) HEART_RATE: ---------------------------------[0m
+[0;32mI (95380) HEART_RATE: Trang thai: DANG DO...[0m
+[0;32mI (95380) HEART_RATE: Raw IR    : 114310[0m
+[0;32mI (95380) HEART_RATE: NHIP TIM  : 153.8 BPM[0m
+[0;32mI (100380) HEART_RATE: ---------------------------------[0m
+[0;32mI (100380) HEART_RATE: Trang thai: DANG DO...[0m
+[0;32mI (100380) HEART_RATE: Raw IR    : 118646[0m
+[0;32mI (100380) HEART_RATE: NHIP TIM  : 95.7 BPM[0m
+[0;32mI (105380) HEART_RATE: ---------------------------------[0m
+[0;32mI (105380) HEART_RATE: Trang thai: DANG DO...[0m
+[0;32mI (105380) HEART_RATE: Raw IR    : 117853[0m
+[0;32mI (105380) HEART_RATE: NHIP TIM  : 95.7 BPM[0m
+[0;32mI (110380) HEART_RATE: ---------------------------------[0m
+[0;32mI (110380) HEART_RATE: Trang thai: DANG DO...[0m
+[0;32mI (110380) HEART_RATE: Raw IR    : 122648[0m
+[0;32mI (110380) HEART_RATE: NHIP TIM  : 120.0 BPM[0m
+[0;32mI (115380) HEART_RATE: ---------------------------------[0m
+[0;32mI (115380) HEART_RATE: Trang thai: DANG DO...[0m
+[0;32mI (115380) HEART_RATE: Raw IR    : 121380[0m
+[0;32mI (115380) HEART_RATE: NHIP TIM  : 135.0 BPM[0m
+[0;32mI (120380) HEART_RATE: ---------------------------------[0m
+[0;32mI (120380) HEART_RATE: Trang thai: DANG DO...[0m
+[0;32mI (120380) HEART_RATE: Raw IR    : 145250[0m
+[0;32mI (120380) HEART_RATE: NHIP TIM  : 54.9 BPM[0m
+[0;32mI (125380) HEART_RATE: ---------------------------------[0m
+[0;32mI (125380) HEART_RATE: Trang thai: DANG DO...[0m
+[0;32mI (125380) HEART_RATE: Raw IR    : 144462[0m
+[0;32mI (125380) HEART_RATE: NHIP TIM  : 54.9 BPM[0m
+[0;32mI (130380) HEART_RATE: ---------------------------------[0m
+[0;33mW (130380) HEART_RATE: Trang thai: CHUA DAT TAY (IR=722)[0m
+[0;32mI (135380) HEART_RATE: ---------------------------------[0m
+[0;33mW (135380) HEART_RATE: Trang thai: CHUA DAT TAY (IR=816)[0m
+[0;32mI (140380) HEART_RATE: ---------------------------------[0m
+[0;32mI (140380) HEART_RATE: Trang thai: DANG DO...[0m
+[0;32mI (140380) HEART_RATE: Raw IR    : 94409[0m
+[0;32mI (140380) HEART_RATE: NHIP TIM  : 90.9 BPM[0m
+[0;32mI (145380) HEART_RATE: ---------------------------------[0m
+[0;33mW (145380) HEART_RATE: Trang thai: CHUA DAT TAY (IR=6300)[0m
+[0;32mI (150380) HEART_RATE: ---------------------------------[0m
+[0;32mI (150380) HEART_RATE: Trang thai: DANG DO...[0m
+[0;32mI (150380) HEART_RATE: Raw IR    : 121852[0m
+[0;32mI (150380) HEART_RATE: NHIP TIM  : 70.6 BPM[0m
+[0;32mI (155380) HEART_RATE: ---------------------------------[0m
+[0;33mW (155380) HEART_RATE: Trang thai: CHUA DAT TAY (IR=828)[0m
+[0;32mI (160380) HEART_RATE: ---------------------------------[0m
+[0;33mW (160380) HEART_RATE: Trang thai: CHUA DAT TAY (IR=876)[0m
+[0;32mI (165380) HEART_RATE: ---------------------------------[0m
+[0;32mI (165380) HEART_RATE: Trang thai: DANG DO...[0m
+[0;32mI (165380) HEART_RATE: Raw IR    : 122584[0m
+[0;32mI (165380) HEART_RATE: NHIP TIM  : 129.5 BPM[0m
+[0;32mI (170380) HEART_RATE: ---------------------------------[0m
+[0;32mI (170380) HEART_RATE: Trang thai: DANG DO...[0m
+[0;32mI (170380) HEART_RATE: Raw IR    : 124379[0m
+[0;32mI (170380) HEART_RATE: NHIP TIM  : 100.2 BPM[0m
+[0;32mI (175380) HEART_RATE: ---------------------------------[0m
+[0;33mW (175380) HEART_RATE: Trang thai: CHUA DAT TAY (IR=1019)[0m
+[0;32mI (180380) HEART_RATE: ---------------------------------[0m
+[0;33mW (180380) HEART_RATE: Trang thai: CHUA DAT TAY (IR=921)[0m
+[0;32mI (185380) HEART_RATE: ---------------------------------[0m
+[0;33mW (185380) HEART_RATE: Trang thai: CHUA DAT TAY (IR=922)[0m
