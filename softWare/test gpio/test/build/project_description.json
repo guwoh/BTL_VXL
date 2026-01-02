@@ -1,7 +1,7 @@
 {
     "version":            "1.2",
     "project_name":       "test",
-    "project_version":    "b723261",
+    "project_version":    "70d629f-dirty",
     "project_path":       "D:/BTL_VXL/softWare/test gpio/test",
     "idf_path":           "C:/Espressif/frameworks/esp-idf-v5.5.1",
     "build_dir":          "D:/BTL_VXL/softWare/test gpio/test/build",
