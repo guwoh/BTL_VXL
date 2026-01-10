@@ -1,0 +1,13 @@
+# Target labels
+ bootloader
+# Source files and their labels
+D:/BTL_VXL/softWare/main_project/esp32s3_fall/build/CMakeFiles/bootloader
+D:/BTL_VXL/softWare/main_project/esp32s3_fall/build/CMakeFiles/bootloader.rule
+D:/BTL_VXL/softWare/main_project/esp32s3_fall/build/CMakeFiles/bootloader-complete.rule
+D:/BTL_VXL/softWare/main_project/esp32s3_fall/build/bootloader-prefix/src/bootloader-stamp/bootloader-build.rule
+D:/BTL_VXL/softWare/main_project/esp32s3_fall/build/bootloader-prefix/src/bootloader-stamp/bootloader-configure.rule
+D:/BTL_VXL/softWare/main_project/esp32s3_fall/build/bootloader-prefix/src/bootloader-stamp/bootloader-download.rule
+D:/BTL_VXL/softWare/main_project/esp32s3_fall/build/bootloader-prefix/src/bootloader-stamp/bootloader-install.rule
+D:/BTL_VXL/softWare/main_project/esp32s3_fall/build/bootloader-prefix/src/bootloader-stamp/bootloader-mkdir.rule
+D:/BTL_VXL/softWare/main_project/esp32s3_fall/build/bootloader-prefix/src/bootloader-stamp/bootloader-patch.rule
+D:/BTL_VXL/softWare/main_project/esp32s3_fall/build/bootloader-prefix/src/bootloader-stamp/bootloader-update.rule

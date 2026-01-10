@@ -1,0 +1,80 @@
+Command: C:\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe C:\Espressif\frameworks\esp-idf-v5.5.1\tools/idf_monitor.py -p COM14 -b 115200 --toolchain-prefix xtensa-esp32s3-elf- --target esp32s3 --revision 0 D:\BTL_VXL\softWare\main_project\esp32s3_fall\build\esp32s3_fall.elf D:\BTL_VXL\softWare\main_project\esp32s3_fall\build\bootloader\bootloader.elf --force-color -m 'C:\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe' 'C:\Espressif\frameworks\esp-idf-v5.5.1\tools\idf.py' '-p' 'COM14'
+ESP-ROM:esp32s3-20210327
+Build:Mar 27 2021
+rst:0x15 (USB_UART_CHIP_RESET),boot:0x22 (DOWNLOAD(USB/UART0))
+Saved PC:0x40041a76
+waiting for download
+Guru Meditation Error: Core 0 panic'ed (IllegalInstruction)
+Core 0 register dump:
+[0;32mI (5385) MAIN_APP: ---------------------------------[0m
+[0;32mI (5385) MAIN_APP: [5s Tick] Heart Rate Check[0m
+[0;32mI (5385) MAIN_APP: Raw RED: 77571, Raw IR: 129860[0m
+[0;32mI (5385) MAIN_APP: Status: Finger Detected. Measuring...[0m
+[0;32mI (10385) MAIN_APP: ---------------------------------[0m
+[0;32mI (10385) MAIN_APP: [5s Tick] Heart Rate Check[0m
+[0;32mI (10385) MAIN_APP: Raw RED: 77132, Raw IR: 129306[0m
+[0;32mI (10385) MAIN_APP: Status: Finger Detected. Measuring...[0m
+[0;32mI (15385) MAIN_APP: ---------------------------------[0m
+[0;32mI (15385) MAIN_APP: [5s Tick] Heart Rate Check[0m
+[0;32mI (15385) MAIN_APP: Raw RED: 77172, Raw IR: 129000[0m
+[0;32mI (15385) MAIN_APP: Status: Finger Detected. Measuring...[0m
+[0;32mI (20385) MAIN_APP: ---------------------------------[0m
+[0;32mI (20385) MAIN_APP: [5s Tick] Heart Rate Check[0m
+[0;32mI (20385) MAIN_APP: Raw RED: 76961, Raw IR: 128650[0m
+[0;32mI (20385) MAIN_APP: Status: Finger Detected. Measuring...[0m
+[0;32mI (25385) MAIN_APP: ---------------------------------[0m
+[0;32mI (25385) MAIN_APP: [5s Tick] Heart Rate Check[0m
+[0;32mI (25385) MAIN_APP: Raw RED: 77083, Raw IR: 128857[0m
+[0;32mI (25385) MAIN_APP: Status: Finger Detected. Measuring...[0m
+[0;32mI (30385) MAIN_APP: ---------------------------------[0m
+[0;32mI (30385) MAIN_APP: [5s Tick] Heart Rate Check[0m
+[0;32mI (30385) MAIN_APP: Raw RED: 76998, Raw IR: 128205[0m
+[0;32mI (30385) MAIN_APP: Status: Finger Detected. Measuring...[0m
+[0;32mI (35385) MAIN_APP: ---------------------------------[0m
+[0;32mI (35385) MAIN_APP: [5s Tick] Heart Rate Check[0m
+[0;32mI (35385) MAIN_APP: Raw RED: 77047, Raw IR: 128775[0m
+[0;32mI (35385) MAIN_APP: Status: Finger Detected. Measuring...[0m
+[0;32mI (40385) MAIN_APP: ---------------------------------[0m
+[0;32mI (40385) MAIN_APP: [5s Tick] Heart Rate Check[0m
+[0;32mI (40385) MAIN_APP: Raw RED: 76993, Raw IR: 128791[0m
+[0;32mI (40385) MAIN_APP: Status: Finger Detected. Measuring...[0m
+[0;32mI (45385) MAIN_APP: ---------------------------------[0m
+[0;32mI (45385) MAIN_APP: [5s Tick] Heart Rate Check[0m
+[0;32mI (45385) MAIN_APP: Raw RED: 77246, Raw IR: 129349[0m
+[0;32mI (45385) MAIN_APP: Status: Finger Detected. Measuring...[0m
+[0;32mI (50385) MAIN_APP: ---------------------------------[0m
+[0;32mI (50385) MAIN_APP: [5s Tick] Heart Rate Check[0m
+[0;32mI (50385) MAIN_APP: Raw RED: 77056, Raw IR: 128968[0m
+[0;32mI (50385) MAIN_APP: Status: Finger Detected. Measuring...[0m
+[0;32mI (55385) MAIN_APP: ---------------------------------[0m
+[0;32mI (55385) MAIN_APP: [5s Tick] Heart Rate Check[0m
+[0;32mI (55385) MAIN_APP: Raw RED: 77191, Raw IR: 128826[0m
+[0;32mI (55385) MAIN_APP: Status: Finger Detected. Measuring...[0m
+[0;32mI (60385) MAIN_APP: ---------------------------------[0m
+[0;32mI (60385) MAIN_APP: [5s Tick] Heart Rate Check[0m
+[0;32mI (60385) MAIN_APP: Raw RED: 77289, Raw IR: 128720[0m
+[0;32mI (60385) MAIN_APP: Status: Finger Detected. Measuring...[0m
+[0;32mI (65385) MAIN_APP: ---------------------------------[0m
+[0;32mI (65385) MAIN_APP: [5s Tick] Heart Rate Check[0m
+[0;32mI (65385) MAIN_APP: Raw RED: 77273, Raw IR: 128717[0m
+[0;32mI (65385) MAIN_APP: Status: Finger Detected. Measuring...[0m
+[0;32mI (70385) MAIN_APP: ---------------------------------[0m
+[0;32mI (70385) MAIN_APP: [5s Tick] Heart Rate Check[0m
+[0;32mI (70385) MAIN_APP: Raw RED: 77298, Raw IR: 128920[0m
+[0;32mI (70385) MAIN_APP: Status: Finger Detected. Measuring...[0m
+[0;32mI (75385) MAIN_APP: ---------------------------------[0m
+[0;32mI (75385) MAIN_APP: [5s Tick] Heart Rate Check[0m
+[0;32mI (75385) MAIN_APP: Raw RED: 77239, Raw IR: 128946[0m
+[0;32mI (75385) MAIN_APP: Status: Finger Detected. Measuring...[0m
+[0;32mI (80385) MAIN_APP: ---------------------------------[0m
+[0;32mI (80385) MAIN_APP: [5s Tick] Heart Rate Check[0m
+[0;32mI (80385) MAIN_APP: Raw RED: 77104, Raw IR: 128934[0m
+[0;32mI (80385) MAIN_APP: Status: Finger Detected. Measuring...[0m
+[0;32mI (85385) MAIN_APP: ---------------------------------[0m
+[0;32mI (85385) MAIN_APP: [5s Tick] Heart Rate Check[0m
+[0;32mI (85385) MAIN_APP: Raw RED: 77158, Raw IR: 128849[0m
+[0;32mI (85385) MAIN_APP: Status: Finger Detected. Measuring...[0m
+[0;32mI (90385) MAIN_APP: ---------------------------------[0m
+[0;32mI (90385) MAIN_APP: [5s Tick] Heart Rate Check[0m
+[0;32mI (90385) MAIN_APP: Raw RED: 77261, Raw IR: 128715[0m
+[0;32mI (90385) MAIN_APP: Status: Finger Detected. Measuring...[0m

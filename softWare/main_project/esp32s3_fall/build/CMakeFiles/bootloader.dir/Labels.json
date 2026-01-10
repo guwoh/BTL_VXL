@@ -1,0 +1,43 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "D:/BTL_VXL/softWare/main_project/esp32s3_fall/build/CMakeFiles/bootloader"
+		},
+		{
+			"file" : "D:/BTL_VXL/softWare/main_project/esp32s3_fall/build/CMakeFiles/bootloader.rule"
+		},
+		{
+			"file" : "D:/BTL_VXL/softWare/main_project/esp32s3_fall/build/CMakeFiles/bootloader-complete.rule"
+		},
+		{
+			"file" : "D:/BTL_VXL/softWare/main_project/esp32s3_fall/build/bootloader-prefix/src/bootloader-stamp/bootloader-build.rule"
+		},
+		{
+			"file" : "D:/BTL_VXL/softWare/main_project/esp32s3_fall/build/bootloader-prefix/src/bootloader-stamp/bootloader-configure.rule"
+		},
+		{
+			"file" : "D:/BTL_VXL/softWare/main_project/esp32s3_fall/build/bootloader-prefix/src/bootloader-stamp/bootloader-download.rule"
+		},
+		{
+			"file" : "D:/BTL_VXL/softWare/main_project/esp32s3_fall/build/bootloader-prefix/src/bootloader-stamp/bootloader-install.rule"
+		},
+		{
+			"file" : "D:/BTL_VXL/softWare/main_project/esp32s3_fall/build/bootloader-prefix/src/bootloader-stamp/bootloader-mkdir.rule"
+		},
+		{
+			"file" : "D:/BTL_VXL/softWare/main_project/esp32s3_fall/build/bootloader-prefix/src/bootloader-stamp/bootloader-patch.rule"
+		},
+		{
+			"file" : "D:/BTL_VXL/softWare/main_project/esp32s3_fall/build/bootloader-prefix/src/bootloader-stamp/bootloader-update.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"bootloader"
+		],
+		"name" : "bootloader"
+	}
+}

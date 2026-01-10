@@ -1,0 +1,5 @@
+0,Falling
+1,Lying Down
+2,Normal
+3,Running
+4,Walking

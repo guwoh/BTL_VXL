@@ -1,0 +1,101 @@
+Command: C:\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe C:\Espressif\frameworks\esp-idf-v5.5.1\tools/idf_monitor.py -p COM14 -b 115200 --toolchain-prefix xtensa-esp32s3-elf- --target esp32s3 --revision 0 D:\BTL_VXL\softWare\main_project\esp32s3_fall\build\esp32s3_fall.elf D:\BTL_VXL\softWare\main_project\esp32s3_fall\build\bootloader\bootloader.elf --force-color -m 'C:\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe' 'C:\Espressif\frameworks\esp-idf-v5.5.1\tools\idf.py' '-p' 'COM14'
+ESP-ROM:esp32s3-20210327
+Build:Mar 27 2021
+rst:0x15 (USB_UART_CHIP_RESET),boot:0x2a (SPI_FAST_FLASH_BOOT)
+Saved PC:0x40377dae
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fce2820,len:0x158c
+load:0x403c8700,len:0xd24
+load:0x403cb700,len:0x2f34
+entry 0x403c8924
+[0;32mI (24) boot: ESP-IDF v5.5.1-dirty 2nd stage bootloader[0m
+[0;32mI (24) boot: compile time Jan  8 2026 16:36:21[0m
+[0;32mI (25) boot: Multicore bootloader[0m
+[0;32mI (25) boot: chip revision: v0.2[0m
+[0;32mI (28) boot: efuse block revision: v1.3[0m
+[0;32mI (32) boot.esp32s3: Boot SPI Speed : 80MHz[0m
+[0;32mI (36) boot.esp32s3: SPI Mode       : DIO[0m
+[0;32mI (39) boot.esp32s3: SPI Flash Size : 2MB[0m
+[0;32mI (43) boot: Enabling RNG early entropy source...[0m
+[0;32mI (48) boot: Partition Table:[0m
+[0;32mI (50) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (56) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (63) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (70) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (76) boot: End of partition table[0m
+[0;32mI (79) esp_image: segment 0: paddr=00010020 vaddr=3c020020 size=0b614h ( 46612) map[0m
+[0;32mI (95) esp_image: segment 1: paddr=0001b63c vaddr=3fc93900 size=02b08h ( 11016) load[0m
+[0;32mI (98) esp_image: segment 2: paddr=0001e14c vaddr=40374000 size=01ecch (  7884) load[0m
+[0;32mI (103) esp_image: segment 3: paddr=00020020 vaddr=42000020 size=1a528h (107816) map[0m
+[0;32mI (128) esp_image: segment 4: paddr=0003a550 vaddr=40375ecc size=0da20h ( 55840) load[0m
+[0;32mI (141) esp_image: segment 5: paddr=00047f78 vaddr=50000000 size=00020h (    32) load[0m
+[0;32mI (147) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (147) boot: Disabling RNG early entropy source...[0m
+[0;32mI (158) cpu_start: Multicore app[0m
+[0;32mI (167) cpu_start: Pro cpu start user code[0m
+[0;32mI (167) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (168) app_init: Application information:[0m
+[0;32mI (168) app_init: Project name:     esp32s3_fall[0m
+[0;32mI (172) app_init: App version:      f3be41d[0m
+[0;32mI (176) app_init: Compile time:     Jan  8 2026 16:35:52[0m
+[0;32mI (181) app_init: ELF file SHA256:  f67acda7c...[0m
+[0;32mI (185) app_init: ESP-IDF:          v5.5.1-dirty[0m
+[0;32mI (190) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (193) efuse_init: Max chip rev:     v0.99 [0m
+[0;32mI (197) efuse_init: Chip rev:         v0.2[0m
+[0;32mI (201) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (208) heap_init: At 3FC96D00 len 00052A10 (330 KiB): RAM[0m
+[0;32mI (213) heap_init: At 3FCE9710 len 00005724 (21 KiB): RAM[0m
+[0;32mI (218) heap_init: At 3FCF0000 len 00008000 (32 KiB): DRAM[0m
+[0;32mI (223) heap_init: At 600FE000 len 00001FE8 (7 KiB): RTCRAM[0m
+[0;32mI (229) spi_flash: detected chip: generic[0m
+[0;32mI (232) spi_flash: flash io: dio[0m
+[0;33mW (235) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;33mW (247) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`[0m
+[0;32mI (257) sleep_gpio: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (263) sleep_gpio: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (270) main_task: Started on CPU0[0m
+[0;32mI (280) main_task: Calling app_main()[0m
+[0;32mI (380) MAIN_APP: MAX30102 Initialized[0m
+[0;32mI (380) MAIN_APP: Starting Heart Rate Measurement Loop...[0m
+[0;32mI (380) main_task: Returned from app_main()[0m
+[0;32mI (11000) MAIN_APP: HEART BEAT DETECTED! BPM: 17[0m
+[0;32mI (13810) MAIN_APP: HEART BEAT DETECTED! BPM: 51[0m
+[0;32mI (16130) MAIN_APP: HEART BEAT DETECTED! BPM: 85[0m
+[0;32mI (16770) MAIN_APP: HEART BEAT DETECTED! BPM: 108[0m
+[0;32mI (17810) MAIN_APP: HEART BEAT DETECTED! BPM: 111[0m
+[0;32mI (18690) MAIN_APP: HEART BEAT DETECTED! BPM: 95[0m
+[0;32mI (19120) MAIN_APP: HEART BEAT DETECTED! BPM: 96[0m
+[0;32mI (19570) MAIN_APP: HEART BEAT DETECTED! BPM: 106[0m
+[0;32mI (20380) MAIN_APP: HEART BEAT DETECTED! BPM: 104[0m
+[0;32mI (21220) MAIN_APP: HEART BEAT DETECTED! BPM: 105[0m
+[0;32mI (21610) MAIN_APP: HEART BEAT DETECTED! BPM: 108[0m
+[0;32mI (22060) MAIN_APP: HEART BEAT DETECTED! BPM: 108[0m
+[0;32mI (23250) MAIN_APP: HEART BEAT DETECTED! BPM: 102[0m
+[0;32mI (25690) MAIN_APP: HEART BEAT DETECTED! BPM: 100[0m
+[0;32mI (35790) MAIN_APP: HEART BEAT DETECTED! BPM: 82[0m
+[0;32mI (37920) MAIN_APP: HEART BEAT DETECTED! BPM: 72[0m
+[0;32mI (38600) MAIN_APP: HEART BEAT DETECTED! BPM: 88[0m
+[0;32mI (39670) MAIN_APP: HEART BEAT DETECTED! BPM: 113[0m
+[0;32mI (42000) MAIN_APP: HEART BEAT DETECTED! BPM: 127[0m
+[0;32mI (43050) MAIN_APP: HEART BEAT DETECTED! BPM: 141[0m
+[0;32mI (43690) MAIN_APP: HEART BEAT DETECTED! BPM: 147[0m
+[0;32mI (49970) MAIN_APP: HEART BEAT DETECTED! BPM: 115[0m
+[0;32mI (51260) MAIN_APP: HEART BEAT DETECTED! BPM: 93[0m
+[0;32mI (52340) MAIN_APP: HEART BEAT DETECTED! BPM: 71[0m
+[0;32mI (53540) MAIN_APP: HEART BEAT DETECTED! BPM: 71[0m
+[0;32mI (55150) MAIN_APP: HEART BEAT DETECTED! BPM: 101[0m
+[0;32mI (55870) MAIN_APP: HEART BEAT DETECTED! BPM: 122[0m
+[0;32mI (56630) MAIN_APP: HEART BEAT DETECTED! BPM: 137[0m
+[0;32mI (58660) MAIN_APP: HEART BEAT DETECTED! BPM: 137[0m
+[0;32mI (60020) MAIN_APP: HEART BEAT DETECTED! BPM: 112[0m
+[0;32mI (61310) MAIN_APP: HEART BEAT DETECTED! BPM: 92[0m
+[0;32mI (62520) MAIN_APP: HEART BEAT DETECTED! BPM: 76[0m
+[0;32mI (65200) MAIN_APP: HEART BEAT DETECTED! BPM: 57[0m
+[0;32mI (69530) MAIN_APP: HEART BEAT DETECTED! BPM: 72[0m
+[0;32mI (70250) MAIN_APP: HEART BEAT DETECTED! BPM: 99[0m
+[0;32mI (70890) MAIN_APP: HEART BEAT DETECTED! BPM: 115[0m
+[0;32mI (71440) MAIN_APP: HEART BEAT DETECTED! BPM: 143[0m
+[0;32mI (77210) MAIN_APP: HEART BEAT DETECTED! BPM: 149[0m
+[0;32mI (84980) MAIN_APP: HEART BEAT DETECTED! BPM: 142[0m

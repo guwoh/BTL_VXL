@@ -1,0 +1,108 @@
+Command: C:\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe C:\Espressif\frameworks\esp-idf-v5.5.1\tools/idf_monitor.py -p COM14 -b 115200 --toolchain-prefix xtensa-esp32s3-elf- --target esp32s3 --revision 0 D:\BTL_VXL\softWare\main_project\esp32s3_fall\build\esp32s3_fall.elf D:\BTL_VXL\softWare\main_project\esp32s3_fall\build\bootloader\bootloader.elf --force-color -m 'C:\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe' 'C:\Espressif\frameworks\esp-idf-v5.5.1\tools\idf.py' '-p' 'COM14'
+ESP-ROM:esp32s3-20210327
+Build:Mar 27 2021
+rst:0x15 (USB_UART_CHIP_RESET),boot:0x22 (DOWNLOAD(USB/UART0))
+Saved PC:0x40041a76
+waiting for download
+[0;33mW (5395) HEART_RATE: [5s Tick] Chưa đặt ngón tay (IR: 2279)[0m
+[0;32mI (10395) HEART_RATE: [5s Tick] Đang tính toán... Giữ yên tay.[0m
+[0;32mI (15405) HEART_RATE: [5s Tick] KẾT QUẢ ĐO: 108 BPM[0m
+[0;32mI (20415) HEART_RATE: [5s Tick] KẾT QUẢ ĐO: 115 BPM[0m
+[0;32mI (25425) HEART_RATE: [5s Tick] Đang tính toán... Giữ yên tay.[0m
+[0;32mI (30435) HEART_RATE: [5s Tick] KẾT QUẢ ĐO: 118 BPM[0m
+[0;32mI (35445) HEART_RATE: [5s Tick] KẾT QUẢ ĐO: 125 BPM[0m
+[0;32mI (40455) HEART_RATE: [5s Tick] KẾT QUẢ ĐO: 121 BPM[0m
+[0;32mI (45455) HEART_RATE: [5s Tick] KẾT QUẢ ĐO: 115 BPM[0m
+[0;32mI (50465) HEART_RATE: [5s Tick] KẾT QUẢ ĐO: 126 BPM[0m
+[0;32mI (55475) HEART_RATE: [5s Tick] KẾT QUẢ ĐO: 107 BPM[0m
+[0;32mI (60485) HEART_RATE: [5s Tick] KẾT QUẢ ĐO: 106 BPM[0m
+[0;32mI (65495) HEART_RATE: [5s Tick] KẾT QUẢ ĐO: 121 BPM[0m
+[0;32mI (70505) HEART_RATE: [5s Tick] KẾT QUẢ ĐO: 121 BPM[0m
+[0;33mW (75515) HEART_RATE: [5s Tick] Chưa đặt ngón tay (IR: 6689)[0m
+[0;32mI (80515) HEART_RATE: [5s Tick] KẾT QUẢ ĐO: 113 BPM[0m
+[0;32mI (85525) HEART_RATE: [5s Tick] KẾT QUẢ ĐO: 126 BPM[0m
+[0;32mI (90525) HEART_RATE: [5s Tick] KẾT QUẢ ĐO: 133 BPM[0m
+[0;32mI (95535) HEART_RATE: [5s Tick] KẾT QUẢ ĐO: 129 BPM[0m
+[0;32mI (100545) HEART_RATE: [5s Tick] KẾT QUẢ ĐO: 69 BPM[0m
+[0;32mI (105555) HEART_RATE: [5s Tick] KẾT QUẢ ĐO: 124 BPM[0m
+[0;32mI (110565) HEART_RATE: [5s Tick] KẾT QUẢ ĐO: 130 BPM[0m
+[0;33mW (115575) HEART_RATE: [5s Tick] Chưa đặt ngón tay (IR: 1939)[0m
+[0;32mI (120575) HEART_RATE: [5s Tick] KẾT QUẢ ĐO: 139 BPM[0m
+[0;32mI (125585) HEART_RATE: [5s Tick] KẾT QUẢ ĐO: 117 BPM[0m
+[0;32mI (130595) HEART_RATE: [5s Tick] KẾT QUẢ ĐO: 132 BPM[0m
+[0;32mI (135605) HEART_RATE: [5s Tick] KẾT QUẢ ĐO: 134 BPM[0m
+[0;32mI (140615) HEART_RATE: [5s Tick] KẾT QUẢ ĐO: 134 BPM[0m
+[0;33mW (145625) HEART_RATE: [5s Tick] Chưa đặt ngón tay (IR: 583)[0m
+[0;32mI (150625) HEART_RATE: [5s Tick] KẾT QUẢ ĐO: 85 BPM[0m
+[0;32mI (155635) HEART_RATE: [5s Tick] KẾT QUẢ ĐO: 117 BPM[0m
+[0;32mI (160645) HEART_RATE: [5s Tick] KẾT QUẢ ĐO: 96 BPM[0m
+[0;32mI (165655) HEART_RATE: [5s Tick] KẾT QUẢ ĐO: 94 BPM[0m
+[0;32mI (170665) HEART_RATE: [5s Tick] KẾT QUẢ ĐO: 93 BPM[0m
+[0;32mI (175675) HEART_RATE: [5s Tick] KẾT QUẢ ĐO: 93 BPM[0m
+[0;32mI (180685) HEART_RATE: [5s Tick] KẾT QUẢ ĐO: 166 BPM[0m
+[0;32mI (185695) HEART_RATE: [5s Tick] KẾT QUẢ ĐO: 150 BPM[0m
+[0;32mI (190705) HEART_RATE: [5s Tick] KẾT QUẢ ĐO: 150 BPM[0m
+[0;32mI (195715) HEART_RATE: [5s Tick] KẾT QUẢ ĐO: 123 BPM[0m
+[0;32mI (200725) HEART_RATE: [5s Tick] KẾT QUẢ ĐO: 123 BPM[0m
+[0;32mI (205735) HEART_RATE: [5s Tick] KẾT QUẢ ĐO: 123 BPM[0m
+[0;32mI (210745) HEART_RATE: [5s Tick] KẾT QUẢ ĐO: 123 BPM[0m
+[0;32mI (215755) HEART_RATE: [5s Tick] KẾT QUẢ ĐO: 123 BPM[0m
+[0;32mI (220765) HEART_RATE: [5s Tick] Đang tính toán... Giữ yên tay.[0m
+[0;32mI (225775) HEART_RATE: [5s Tick] KẾT QUẢ ĐO: 99 BPM[0m
+[0;32mI (230785) HEART_RATE: [5s Tick] KẾT QUẢ ĐO: 99 BPM[0m
+[0;32mI (235795) HEART_RATE: [5s Tick] KẾT QUẢ ĐO: 97 BPM[0m
+[0;32mI (240805) HEART_RATE: [5s Tick] KẾT QUẢ ĐO: 97 BPM[0m
+[0;32mI (245815) HEART_RATE: [5s Tick] KẾT QUẢ ĐO: 88 BPM[0m
+[0;32mI (250825) HEART_RATE: [5s Tick] KẾT QUẢ ĐO: 127 BPM[0m
+[0;32mI (255835) HEART_RATE: [5s Tick] Đang tính toán... Giữ yên tay.[0m
+[0;32mI (260845) HEART_RATE: [5s Tick] KẾT QUẢ ĐO: 133 BPM[0m
+[0;32mI (265845) HEART_RATE: [5s Tick] KẾT QUẢ ĐO: 144 BPM[0m
+[0;32mI (270855) HEART_RATE: [5s Tick] KẾT QUẢ ĐO: 131 BPM[0m
+[0;32mI (275865) HEART_RATE: [5s Tick] KẾT QUẢ ĐO: 127 BPM[0m
+[0;32mI (280875) HEART_RATE: [5s Tick] KẾT QUẢ ĐO: 126 BPM[0m
+[0;32mI (285885) HEART_RATE: [5s Tick] KẾT QUẢ ĐO: 122 BPM[0m
+[0;32mI (290895) HEART_RATE: [5s Tick] KẾT QUẢ ĐO: 113 BPM[0m
+[0;32mI (295905) HEART_RATE: [5s Tick] KẾT QUẢ ĐO: 112 BPM[0m
+[0;32mI (300915) HEART_RATE: [5s Tick] KẾT QUẢ ĐO: 119 BPM[0m
+[0;32mI (305925) HEART_RATE: [5s Tick] KẾT QUẢ ĐO: 106 BPM[0m
+[0;32mI (310935) HEART_RATE: [5s Tick] KẾT QUẢ ĐO: 99 BPM[0m
+[0;32mI (315945) HEART_RATE: [5s Tick] KẾT QUẢ ĐO: 99 BPM[0m
+[0;32mI (320955) HEART_RATE: [5s Tick] KẾT QUẢ ĐO: 99 BPM[0m
+[0;32mI (325965) HEART_RATE: [5s Tick] KẾT QUẢ ĐO: 99 BPM[0m
+[0;32mI (330975) HEART_RATE: [5s Tick] KẾT QUẢ ĐO: 102 BPM[0m
+[0;32mI (335975) HEART_RATE: [5s Tick] KẾT QUẢ ĐO: 93 BPM[0m
+[0;32mI (340985) HEART_RATE: [5s Tick] KẾT QUẢ ĐO: 95 BPM[0m
+[0;32mI (345995) HEART_RATE: [5s Tick] KẾT QUẢ ĐO: 93 BPM[0m
+[0;32mI (351005) HEART_RATE: [5s Tick] KẾT QUẢ ĐO: 94 BPM[0m
+[0;32mI (356015) HEART_RATE: [5s Tick] KẾT QUẢ ĐO: 105 BPM[0m
+[0;32mI (361025) HEART_RATE: [5s Tick] KẾT QUẢ ĐO: 106 BPM[0m
+[0;32mI (366025) HEART_RATE: [5s Tick] KẾT QUẢ ĐO: 104 BPM[0m
+[0;32mI (371035) HEART_RATE: [5s Tick] KẾT QUẢ ĐO: 108 BPM[0m
+[0;32mI (376045) HEART_RATE: [5s Tick] KẾT QUẢ ĐO: 114 BPM[0m
+[0;32mI (381055) HEART_RATE: [5s Tick] KẾT QUẢ ĐO: 125 BPM[0m
+[0;32mI (386065) HEART_RATE: [5s Tick] KẾT QUẢ ĐO: 119 BPM[0m
+[0;32mI (391075) HEART_RATE: [5s Tick] KẾT QUẢ ĐO: 116 BPM[0m
+[0;32mI (396085) HEART_RATE: [5s Tick] KẾT QUẢ ĐO: 116 BPM[0m
+[0;32mI (401095) HEART_RATE: [5s Tick] KẾT QUẢ ĐO: 116 BPM[0m
+[0;32mI (406105) HEART_RATE: [5s Tick] KẾT QUẢ ĐO: 116 BPM[0m
+[0;32mI (411115) HEART_RATE: [5s Tick] KẾT QUẢ ĐO: 109 BPM[0m
+[0;32mI (416125) HEART_RATE: [5s Tick] KẾT QUẢ ĐO: 95 BPM[0m
+[0;32mI (421135) HEART_RATE: [5s Tick] KẾT QUẢ ĐO: 106 BPM[0m
+[0;32mI (426145) HEART_RATE: [5s Tick] KẾT QUẢ ĐO: 114 BPM[0m
+[0;32mI (431155) HEART_RATE: [5s Tick] KẾT QUẢ ĐO: 105 BPM[0m
+[0;32mI (436165) HEART_RATE: [5s Tick] KẾT QUẢ ĐO: 102 BPM[0m
+[0;32mI (441175) HEART_RATE: [5s Tick] KẾT QUẢ ĐO: 108 BPM[0m
+[0;32mI (446185) HEART_RATE: [5s Tick] KẾT QUẢ ĐO: 111 BPM[0m
+[0;32mI (451195) HEART_RATE: [5s Tick] KẾT QUẢ ĐO: 104 BPM[0m
+[0;32mI (456205) HEART_RATE: [5s Tick] KẾT QUẢ ĐO: 106 BPM[0m
+[0;32mI (461215) HEART_RATE: [5s Tick] KẾT QUẢ ĐO: 90 BPM[0m
+[0;32mI (466225) HEART_RATE: [5s Tick] KẾT QUẢ ĐO: 107 BPM[0m
+[0;32mI (471235) HEART_RATE: [5s Tick] KẾT QUẢ ĐO: 107 BPM[0m
+[0;32mI (476245) HEART_RATE: [5s Tick] KẾT QUẢ ĐO: 97 BPM[0m
+[0;32mI (481255) HEART_RATE: [5s Tick] KẾT QUẢ ĐO: 111 BPM[0m
+[0;32mI (486265) HEART_RATE: [5s Tick] KẾT QUẢ ĐO: 113 BPM[0m
+[0;32mI (491275) HEART_RATE: [5s Tick] KẾT QUẢ ĐO: 127 BPM[0m
+[0;32mI (496285) HEART_RATE: [5s Tick] KẾT QUẢ ĐO: 103 BPM[0m
+[0;32mI (501295) HEART_RATE: [5s Tick] KẾT QUẢ ĐO: 104 BPM[0m
+[0;32mI (506305) HEART_RATE: [5s Tick] KẾT QUẢ ĐO: 150 BPM[0m
+[0;33mW (511315) HEART_RATE: [5s Tick] Chưa đặt ngón tay (IR: 1717)[0m
