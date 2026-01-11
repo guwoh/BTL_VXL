@@ -16,3 +16,5 @@ python train.py
 python export_tflite.py
 
 python export_kernels.py > kernels.h
+
+gcc cnn_infer.c -O3 -o cnn.exe

@@ -1,4 +1,5 @@
 #pragma once
+#include <stdint.h>
 
 #define CONV1_K 3
 #define CONV1_CIN 6

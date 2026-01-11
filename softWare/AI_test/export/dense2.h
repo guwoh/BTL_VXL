@@ -1,4 +1,5 @@
 #pragma once
+#include <stdint.h>
 
 #define DENSE2_CIN 32
 #define DENSE2_COUT 5

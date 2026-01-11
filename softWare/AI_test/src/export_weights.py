@@ -3,7 +3,7 @@ import os
 import numpy as np
 import tensorflow as tf
 
-OUT_DIR = "../export"
+OUT_DIR = "../test"
 MODEL_PATH = "../models/activity_cnn.h5"
 
 os.makedirs(OUT_DIR, exist_ok=True)
